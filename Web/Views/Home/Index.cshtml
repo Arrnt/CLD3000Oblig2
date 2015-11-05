@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Common.ImageModel>
+
+<h2>InstaStudPictureGram</h2>
+
+<div>
+    
+    <table class="table">
+        @if (Model != null)
+        {
+            foreach (var item in Model.OrderByDescending(x => x.PostedDate).ToList())
+            {
+                <tr>
+                    <td>
+                        <h3>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </h3>
+                        <div>
+                            <img src="@Html.Raw(item.ScaledImageURL)" alt=""/>
+                        </div>
+                        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+</div>

@@ -1,0 +1,8 @@
+*.userprefs
+*.suo
+_ReSharper.*
+bin
+obj
+packages
+Components
+**/*.designer.cs
