@@ -6,4 +6,4 @@ obj
 packages
 Components
 **/*.designer.cs
-\Web\Properties\PublishProfiles
+Web/Properties/PublishProfiles
