@@ -15,7 +15,9 @@
                             @Html.DisplayFor(modelItem => item.Title)
                         </h3>
                         <div>
-                            <img src="@Html.Raw(item.ScaledImageURL)" alt=""/>
+                            <a href="@Html.Raw(item.ImageURL)">
+                                <img src="@Html.Raw(item.ScaledImageURL)" alt="" />
+                            </a>
                         </div>
                         <p>@Html.DisplayFor(modelItem => item.Description)</p>
                     </td>

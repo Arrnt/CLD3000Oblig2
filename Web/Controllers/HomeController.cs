@@ -47,7 +47,6 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Title,Description")] ImageModel im, HttpPostedFileBase imageFile)
         {
-            if (string.IsNullOrEmpty(im.Title) || string.IsNullOrEmpty(im.ImageURL)) return Create();
             CloudBlockBlob imageBlob = null;
             if (!ModelState.IsValid) return View(im);
             if (imageFile != null && imageFile.ContentLength != 0)
@@ -55,6 +54,7 @@ namespace Web.Controllers
                 imageBlob = await UploadAndSaveBlobAsync(imageFile);
                 im.ImageURL = imageBlob.Uri.ToString().Replace("https://cld3000blob.blob.core.windows.net", "http://az827916.vo.msecnd.net");
             }
+            if (string.IsNullOrEmpty(im.Title) || string.IsNullOrEmpty(im.ImageURL)) return Create();
             im.PostedDate = DateTime.Now;
             _db.Images.Add(im);
             await _db.SaveChangesAsync();
