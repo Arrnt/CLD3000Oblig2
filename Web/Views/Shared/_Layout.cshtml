@@ -18,14 +18,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href='@Url.Action("Index", "Home")'>
-                        <img style="padding-top: 11px" src='@Url.Content("~/Images/logo.png")' alt="" />
+                    <img style="padding-top: 11px" src='@Url.Content("~/Images/logo.png")' alt="" />
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Last opp bilde", "Create", "Home")</li>
                     <li>@Html.ActionLink("Om", "About", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -34,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Arnt Wirgenes</p>
+            <p>&copy; @DateTime.Now.Year - InstaStudPictureGroup</p>
         </footer>
     </div>
 

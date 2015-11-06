@@ -6,34 +6,31 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div style="width: 300px">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        <div style="padding-top: 15px;">
+            <div>
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Tittel"} })
+                @Html.ValidationMessageFor(model => model.Title, "", new { htmlAttributes = new { @class = "text-danger"} })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        <div style="padding-top: 15px">
+            <div>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "Beskrivelse" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { htmlAttributes = new { @class = "text-danger"}})
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="imageFile">Bilde</label>
-            <div class="col-md-10">
+        <div style="padding-top: 15px">
+            <div>
                 <input type="file" name="imageFile" accept="image/*" class="form-control fileupload" />
             </div>
         </div>
         
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+        <div style="padding-top: 15px">
+            <div>
                 <input type="submit" value="Last opp" class="btn btn-default" />
             </div>
         </div>
