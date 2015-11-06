@@ -1,16 +1,13 @@
 ﻿@model IEnumerable<Common.ImageModel>
 
-<h2>InstaStudPictureGram</h2>
-
 <div>
-    
     <table class="table">
         @if (Model != null)
         {
             foreach (var item in Model.OrderByDescending(x => x.PostedDate).ToList())
             {
                 <tr>
-                    <td>
+                    <td  style="align-content: center">
                         <h3>
                             @Html.DisplayFor(modelItem => item.Title)
                         </h3>

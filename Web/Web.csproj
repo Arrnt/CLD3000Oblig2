@@ -145,10 +145,12 @@
   <ItemGroup>
     <Content Include="Content\lightbox.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Images\logo.png" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\CLD3000Oblig2 %285%29.pubxml" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2.pubxml" />
     <Content Include="Scripts\lightbox.js" />
     <Content Include="Views\Home\Index.cshtml" />
