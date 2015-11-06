@@ -15,8 +15,8 @@
                             @Html.DisplayFor(modelItem => item.Title)
                         </h3>
                         <div>
-                            <a href="@Html.Raw(item.ImageURL)">
-                                <img src="@Html.Raw(item.ScaledImageURL)" alt="" />
+                            <a href="@Html.Raw(item.ImageURL)" data-lightbox="InstaStudPictureGram" data-title="@Html.DisplayFor(modelItem => item.Title)">
+                                <img src="@Html.Raw(item.ScaledImageURL)" alt=""/>
                             </a>
                         </div>
                         <p>@Html.DisplayFor(modelItem => item.Description)</p>
