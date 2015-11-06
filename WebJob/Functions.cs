@@ -37,18 +37,19 @@ namespace WebJob
 
         public static void ResizeImage(Stream input, Stream output)
         {
-            const int size = 300;
             var originalImage = new Bitmap(input);
+            const int width = 300;
+            var height = ((double)originalImage.Height / originalImage.Width) * width;
             Bitmap scaledImage = null;
             try
             {
-                scaledImage = new Bitmap(size, size);
+                scaledImage = new Bitmap(width, (int)height);
                 using (var graphics = Graphics.FromImage(scaledImage))
                 {
                     graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                    graphics.DrawImage(originalImage, 0, 0, size, size);
+                    graphics.DrawImage(originalImage, 0, 0, width, (int)height);
                 }
                 scaledImage.Save(output, ImageFormat.Jpeg);
             }

@@ -45,8 +45,9 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Title,Description,Phone")] ImageModel im, HttpPostedFileBase imageFile)
+        public async Task<ActionResult> Create([Bind(Include = "Title,Description")] ImageModel im, HttpPostedFileBase imageFile)
         {
+            if (string.IsNullOrEmpty(im.Title) || string.IsNullOrEmpty(im.ImageURL)) return Create();
             CloudBlockBlob imageBlob = null;
             if (!ModelState.IsValid) return View(im);
             if (imageFile != null && imageFile.ContentLength != 0)
@@ -60,7 +61,7 @@ namespace Web.Controllers
             Trace.TraceInformation($"Created ImageId {im.ImageId} in database");
 
             if (imageBlob == null) return RedirectToAction("Index");
-            var blobInfo = new BlobInformation() { ImageId = im.ImageId, BlobUri = new Uri(im.ImageURL) };
+            var blobInfo = new BlobInformation { ImageId = im.ImageId, BlobUri = new Uri(im.ImageURL) };
             var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
             await _requestQueue.AddMessageAsync(queueMessage);
             Trace.TraceInformation($"Created queue message for ImageId {im.ImageId}");
