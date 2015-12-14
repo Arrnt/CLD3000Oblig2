@@ -151,10 +151,10 @@
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\CLD3000Oblig2 %285%29.pubxml" />
-    <None Include="Properties\PublishProfiles\CLD3000Oblig2.pubxml" />
     <Content Include="Scripts\lightbox.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <None Include="Properties\PublishProfiles\dittappnavn2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -52,7 +52,7 @@ namespace Web.Controllers
             if (imageFile != null && imageFile.ContentLength != 0)
             {
                 imageBlob = await UploadAndSaveBlobAsync(imageFile);
-                im.ImageURL = imageBlob.Uri.ToString().Replace("https://cld3000blob.blob.core.windows.net", "http://az827916.vo.msecnd.net");
+                im.ImageURL = imageBlob.Uri.ToString();
             }
             if (string.IsNullOrEmpty(im.Title) || string.IsNullOrEmpty(im.ImageURL)) return Create();
             im.PostedDate = DateTime.Now;

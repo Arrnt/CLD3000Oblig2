@@ -30,7 +30,7 @@ namespace WebJob
                 {
                     throw new Exception($"ImageId {id} not found, can't scale");
                 }
-                im.ScaledImageURL = outputBlob.Uri.ToString().Replace("https://cld3000blob.blob.core.windows.net", "http://az827916.vo.msecnd.net");
+                im.ScaledImageURL = outputBlob.Uri.ToString();
                 db.SaveChanges();
             }
         }
